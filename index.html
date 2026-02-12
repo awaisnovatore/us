@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Us</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;900&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  background: #000;
+  color: #f2f2f2;
+  font-family: 'Playfair Display', serif;
+  overflow-x: hidden;
+}
+
+/* ---------------- NETFLIX INTRO ---------------- */
+
+#intro {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOutIntro 1.5s ease 4s forwards;
+}
+
+.logo {
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: 15px;
+  color: #e50914;
+  opacity: 0;
+  transform: scale(0.7);
+  animation: logoReveal 2.5s ease forwards;
+}
+
+@keyframes logoReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+    text-shadow: 0 0 0px #e50914;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+    text-shadow: 0 0 25px #e50914;
+  }
+  100% {
+    text-shadow: 0 0 8px #e50914;
+  }
+}
+
+@keyframes fadeOutIntro {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* ---------------- GENERAL SECTIONS ---------------- */
+
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 40px;
+}
+
+/* Scene 1 */
+.line {
+  opacity: 0;
+  font-size: 2rem;
+  margin: 10px 0;
+  transition: opacity 1.8s ease;
+}
+
+.line.name {
+  font-size: 2.6rem;
+  letter-spacing: 2px;
+}
+
+.line.small {
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+
+.active { opacity: 1; }
+
+/* Timeline */
+.timeline .year {
+  max-width: 800px;
+  margin: 120px auto;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1.5s ease;
+}
+
+.year img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Closeups */
+.closeups { cursor: pointer; }
+#closeup-text {
+  font-size: 2rem;
+  max-width: 700px;
+  transition: opacity 1.2s ease;
+}
+
+/* Letter */
+.letter { background: #0a0a0a; }
+.paper {
+  max-width: 700px;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+/* Promise */
+.promise-text p {
+  font-size: 2rem;
+  margin: 15px 0;
+  opacity: 0;
+  animation: fadeLine 1.5s forwards;
+}
+
+.promise-text p:nth-child(1){animation-delay:0s;}
+.promise-text p:nth-child(2){animation-delay:1.5s;}
+.promise-text p:nth-child(3){animation-delay:3s;}
+
+@keyframes fadeLine { to { opacity: 1; } }
+@keyframes fadeIn { to { opacity: 1; } }
+
+/* Final */
+.final { position: relative; padding: 0; }
+.final img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0;
+  animation: fadeIn 2.5s forwards;
+}
+
+.final-text {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  animation-delay: 2s;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NETFLIX STYLE INTRO -->
+<div id="intro">
+  <div class="logo">US</div>
+</div>
+
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Scene 1 -->
+<section>
+  <div class="line active">This is not a website.</div>
+  <div class="line">This is a story.</div>
+  <div class="line">Three years in the making.</div>
+  <div class="line name">Razia</div>
+  <div class="line small">and</div>
+  <div class="line name">Awais</div>
+  <div class="line small">A Valentine’s Film</div>
+</section>
+
+<!-- Timeline -->
+<section class="timeline">
+  <div class="year">
+    <img src="images/year1.jpg">
+    <h2>Year One</h2>
+    <p>We stepped in, excited… without knowing how far we would go.</p>
+  </div>
+
+  <div class="year">
+    <img src="images/year2.jpg">
+    <h2>Year Two</h2>
+    <p>Somewhere between holding you and being held, love became real.</p>
+  </div>
+
+  <div class="year">
+    <img src="images/year3.jpg">
+    <h2>Year Three</h2>
+    <p>Life grew fuller. Louder. Happier.</p>
+  </div>
+</section>
+
+<!-- Closeups -->
+<section class="closeups">
+  <div id="closeup-text">
+    There was a time when everything changed.
+  </div>
+</section>
+
+<!-- Letter -->
+<section class="letter">
+  <div class="paper">
+    <p>Rozo,</p>
+    <p>Loving you has never been loud.</p>
+    <p>It has been steady.</p>
+    <p>I’ve seen you give more than you had.<br>
+    I’ve seen you stay strong when it would have been easier to stop.</p>
+    <p>You never asked for praise.<br>You just showed up.</p>
+    <p>And somewhere in all of that…<br>
+    my respect for you turned into something deeper than love.</p>
+    <p>This is me, saying it clearly.</p>
+    <p>I see you.<br>I honor you.<br>And I’m still here.</p>
+  </div>
+</section>
+
+<!-- Promise -->
+<section class="promise">
+  <div class="promise-text">
+    <p>No matter what happens,</p>
+    <p>I promise that I will never forget what you endured,</p>
+    <p>and I will honor it every day.</p>
+  </div>
+</section>
+
+<!-- Final -->
+<section class="final">
+  <img src="images/final.jpg">
+  <div class="final-text">Happy Valentine’s Day, Rozo</div>
+</section>
+
+<script>
+// Scene 1 text animation
+const lines = document.querySelectorAll('.line');
+let index = 0;
+setInterval(() => {
+  if (index < lines.length) {
+    lines[index].classList.add('active');
+    index++;
+  }
+}, 2200);
+
+// Timeline animation
+const years = document.querySelectorAll('.year');
+window.addEventListener('scroll', () => {
+  years.forEach(year => {
+    const rect = year.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      year.style.opacity = 1;
+      year.style.transform = 'translateY(0)';
+    }
+  });
+});
+
+// Closeups click
+const closeupLines = [
+  "There was a time when everything changed.",
+  "I watched you carry more than anyone should.",
+  "Your body was tired.",
+  "Your mind was brave.",
+  "And still… you didn’t stop.",
+  "That’s when I understood your strength."
+];
+
+let closeupIndex = 0;
+const closeupText = document.getElementById('closeup-text');
+
+document.querySelector('.closeups').addEventListener('click', () => {
+  closeupIndex++;
+  if (closeupIndex < closeupLines.length) {
+    closeupText.style.opacity = 0;
+    setTimeout(() => {
+      closeupText.textContent = closeupLines[closeupIndex];
+      closeupText.style.opacity = 1;
+    }, 600);
+  }
+});
+</script>
+
+</body>
+</html>
